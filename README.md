@@ -605,3 +605,65 @@ Now, I wonder ... What are the potential hobbies your child could have ? It turn
 - either intersection (only the hobbies common to both arrays)
 - or a fusion (all the hobbies of each array together)
 Try to guess the name of the 2 PHP functions that can make these two operations and look it up in the online PHP Manual. (Tip: both start with `array_`). Test their syntax and try to answer the question.
+
+```PHP
+$me = array(
+    'age'    => 45,
+    'firstname'         => 'Alexandre',
+    'lastname'               => 'Plennevaux',
+    'favourite_movies'     => array('My Own Private Idaho', 'Her', 'Matrix')
+);
+$me['hobbies'] = array(
+    'read', 'sleep', 'more sleep', 'birdwatching'
+);
+
+$soulmate = array(
+    'age'    => 35,
+    'firstname'         => 'Alexandra',
+    'lastname'               => 'Durante',
+    'favourite_movies'     => array('Rapunzel', 'Her', 'Searching for happiness')
+);
+$soulmate['hobbies'] = array(
+    'read', 'sleep', 'less sleep', 'antwatching'
+);
+// perform array operation
+$possible_hobbies_via_intersection = array_intersect($me['hobbies'], $soulmate['hobbies']);
+// intercept can only compare arrays and not nested arrays, so we need to chose 'hobbies' since the whole array $me has nested elements
+$possible_hobbies_via_merge = array_merge($me['hobbies'], $soulmate['hobbies']);
+
+echo '<pre>';
+print_r($possible_hobbies_via_intersection);
+print_r($possible_hobbies_via_merge);
+echo '</pre>';
+```
+
+**More array exercises**
+
+For each of these exercises, use print_r()or var_dump() to check if the result corresponds to the specifications.
+
+- Create an array  $web_development containing a 'frontend' and a 'backend' key. Assign an empty array to each key.
+- Then, add a line underneath that pushes 'xhtml' in the right array.
+- Then, add a line underneath that pushes 'Ruby on Rails' in the right array.
+- Then, add a line underneath that pushes 'CSS' in the right array.
+- Then, add a line underneath that pushes 'Flash' in the right array.
+- Then, add a line underneath that pushes 'JavaScript' in the right array.
+- Then, add a line underneath that replace 'xhtml' by 'html'.
+- Then, add a line underneath that removes 'Flash' from the array.
+```PHP
+$web_dev = array(
+    'frontend' => [],
+    'backend' => []
+);
+$web_dev['frontend'][] = 'xhtml';
+$web_dev['backend'][] = 'Ruby on Rails';
+$web_dev['frontend'][] = 'css';
+$web_dev['backend'][] = 'flash';
+$web_dev['backend'][] = 'Javascript';
+// $web_dev['frontend']['xhtml'] = 'html'; // does not seem to work, it just creates a new line
+$web_dev['frontend'][0] = 'html';
+array_splice($web_dev['backend'], 1, 1); // this removes an element from array, starting from 1 and deletes 1
+echo '<pre>';
+print_r($web_dev);
+var_dump($web_dev);
+echo '</pre>';
+```

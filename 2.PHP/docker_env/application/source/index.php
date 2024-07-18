@@ -34,45 +34,92 @@
 // print_r($me);
 // echo '</pre>';
 
-$me = array(
-    'age'    => 45,
-    'firstname'         => 'Alexandre',
-    'lastname'               => 'Plennevaux',
-    'favourite_movies'     => array('My Own Private Idaho', 'Her', 'Matrix')
+// $me = array(
+//     'age'    => 45,
+//     'firstname'         => 'Alexandre',
+//     'lastname'               => 'Plennevaux',
+//     'favourite_movies'     => array('My Own Private Idaho', 'Her', 'Matrix')
+// );
+// $me['hobbies'] = array(
+//     'read', 'sleep', 'more sleep', 'birdwatching'
+// );
+// echo '<pre>';
+// print_r($me);
+// echo '</pre>';
+
+// $mother = [];
+// $mother['age'] = 50;
+// $mother['firstname'] = 'Lourdes';
+// $mother['lastname'] = 'Souza';
+// $mother['favorite_movies'] = array('this', 'that');
+// $mother['hobbies'] = array('this1', 'that2');
+
+
+// echo '<pre>';
+// print_r($mother);
+// echo '</pre>';
+
+// $me['mother'] = $mother;
+// echo '<pre>';
+// print_r($me);
+// echo '</pre>';
+
+// echo count($mother['hobbies']);
+// echo '<br>';
+// echo count($me['hobbies']);
+// echo '<br>';
+// echo count($me['hobbies']) + count($mother['hobbies']);
+
+// $me['hobbies'][] = 'taxidormie';
+// $me['lastname'] = 'Durant';
+
+// echo '<pre>';
+// print_r($me);
+// echo '</pre>';
+
+// //  Another exo
+// $me = array(
+//     'age'    => 45,
+//     'firstname'         => 'Alexandre',
+//     'lastname'               => 'Plennevaux',
+//     'favourite_movies'     => array('My Own Private Idaho', 'Her', 'Matrix')
+// );
+// $me['hobbies'] = array(
+//     'read', 'sleep', 'more sleep', 'birdwatching'
+// );
+
+// $soulmate = array(
+//     'age'    => 35,
+//     'firstname'         => 'Alexandra',
+//     'lastname'               => 'Durante',
+//     'favourite_movies'     => array('Rapunzel', 'Her', 'Searching for happiness')
+// );
+// $soulmate['hobbies'] = array(
+//     'read', 'sleep', 'less sleep', 'antwatching'
+// );
+// // perform array operation
+// $possible_hobbies_via_intersection = array_intersect($me['hobbies'], $soulmate['hobbies']);
+// $possible_hobbies_via_merge = array_merge($me['hobbies'], $soulmate['hobbies']);
+
+// echo '<pre>';
+// print_r($possible_hobbies_via_intersection);
+// print_r($possible_hobbies_via_merge);
+// echo '</pre>';
+
+$web_dev = array(
+    'frontend' => [],
+    'backend' => []
 );
-$me['hobbies'] = array(
-    'read', 'sleep', 'more sleep', 'birdwatching'
-);
+$web_dev['frontend'][] = 'xhtml';
+$web_dev['backend'][] = 'Ruby on Rails';
+$web_dev['frontend'][] = 'css';
+$web_dev['backend'][] = 'flash';
+$web_dev['backend'][] = 'Javascript';
+// $web_dev['frontend']['xhtml'] = 'html'; // does not seem to work, it just creates a new line
+$web_dev['frontend'][0] = 'html';
+
+array_splice($web_dev['backend'], 1, 1); // this removes an element from array, starting from 1 and deletes 1
 echo '<pre>';
-print_r($me);
-echo '</pre>';
-
-$mother = [];
-$mother['age'] = 50;
-$mother['firstname'] = 'Lourdes';
-$mother['lastname'] = 'Souza';
-$mother['favorite_movies'] = array('this', 'that');
-$mother['hobbies'] = array('this1', 'that2');
-
-
-echo '<pre>';
-print_r($mother);
-echo '</pre>';
-
-$me['mother'] = $mother;
-echo '<pre>';
-print_r($me);
-echo '</pre>';
-
-echo count($mother['hobbies']);
-echo '<br>';
-echo count($me['hobbies']);
-echo '<br>';
-echo count($me['hobbies']) + count($mother['hobbies']);
-
-$me['hobbies'][] = 'taxidormie';
-$me['lastname'] = 'Durant';
-
-echo '<pre>';
-print_r($me);
+print_r($web_dev);
+var_dump($web_dev);
 echo '</pre>';
